@@ -1,0 +1,85 @@
+.eachClientLogo {
+  max-width: 150px;
+  height: 5rem;
+  /* padding: 0 15px; */
+  object-fit: contain;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eachClientLogo:last-of-type {
+  padding-left: 0;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 5rem;
+}
+
+.wrapper {
+  position: absolute;
+  display: flex;
+}
+
+.inner:before,
+.inner:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.inner:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.inner:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+@media only screen and (max-width: 639px) {
+  .inner:before,
+  .inner:after {
+    width: 250px;
+    height: 100%;
+    background: transparent;
+  }
+}
+
+.left-to-right {
+  display: flex;
+  animation: swipe var(--speed) linear infinite backwards;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-100%);
+  }
+}
+
+.right-to-left {
+  display: flex;
+  animation: rightToLeftSwip var(--speed) linear infinite backwards;
+}
+
+@keyframes rightToLeftSwip {
+  0% {
+    transform: translate(-100%);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}

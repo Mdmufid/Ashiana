@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Disable Tailwind utilities and preflight inside */
+.not-tailwind, 
+.not-tailwind * {
+  all: unset;       /* removes all inherited styles */
+  display: revert;  /* restore browser default */
+  font-family: revert;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.josefin-sans-300 {
+  font-family: var(--josefin-400);
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.josefin-sans-400 {
+  font-family: var(--josefin-400);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.josefin-sans-400-itilic {
+  font-family: var(--josefin-400);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.josefin-sans-500 {
+  font-family: var(--josefin-400);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.navItemClipPath {
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+}
+
+.navItemMobileClipPath {
+  clip-path: polygon(0% 0%, 92% 0, 100% 50%, 92% 100%, 0% 100%);
+}
+
+.text-stroke-2 {
+  -webkit-text-stroke: 2px #073842;
+}
+
+.pimg {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: url("/banner/elementdesign.webp");
+  background-attachment: fixed;
+}
+
+.pimg2 {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: url("/paralalimg2.webp");
+  background-attachment: fixed;
+}
+
+.paddingTop30 {
+  padding-top: 30px;
+}
+
+@font-face {
+  font-family: "ArialFont";
+  src: url("../public/fonts/arial-font/ARIBL0.ttf") format("ttf");
+  font-weight: 800;
+  font-style: italic;
+}
+
+.marquee {
+  color: #eee;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.667vw;
+  padding: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollEachText {
+  text-wrap: nowrap;
+  padding-left: 9rem;
+  -webkit-text-stroke: 0.2px #fffbfb;
+  color: transparent;
+  font-size: 6rem;
+}
+
+@media only screen and (max-width: 639px) {
+  .scrollEachText {
+    -webkit-text-stroke: 3px #fffbfb;
+  }
+}
+
+.left-to-right {
+  display: flex;
+  animation: swipe 32s linear infinite backwards;
+}
+
+.space {
+  margin-right: 1.5rem;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-100%);
+  }
+}
+
+.shdowCategory {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+.clientsLogoShdow {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.testimonialBorderRedious {
+  border-bottom-right-radius: 28px;
+  border-bottom-left-radius: 28px;
+}
+
+.spacialServiceBorderRadius {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.arrowRotateTransitonTimingFunction {
+  transition-timing-function: cubic-bezier(1, 0.02, 0, 1.08);
+}
+
+.formInput::placeholder {
+  font-weight: 500;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.formShdow {
+  box-shadow: 0px 10px 43px -3px rgba(0, 0, 0, 0.3);
+}
+
+.blurFadeLayout {
+  mask-image: linear-gradient(#000, rgba(0, 0, 0, 0.1));
+  -webkit-mask-image: linear-gradient(#000, rgba(0, 0, 0, 0.1));
+}
+
+.blogItemShdow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.something {
+  border-top-left-radius: 12px;
+}
+
+table,
+th,
+td {
+  border: 1px solid gray;
+}
+
+th {
+  padding: 8px 0;
+}
+
+td {
+  padding: 0 5px;
+  text-align: center;
+  font-size: 12px;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.text-blue-700 {
+  color: rgb(0, 110, 255);
+}
+
+.pandulamAnimation {
+  animation: pandulam 2s ease-in infinite;
+  animation-direction: alternate;
+}
+
+.linkStyle {
+  color: rgb(0, 110, 255);
+}
+
+@keyframes pandulam {
+  0% {
+    transform: rotate(-12deg);
+  }
+  100% {
+    transform: rotate(12deg);
+  }
+}
+
+.hiddenScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.max-layout {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
